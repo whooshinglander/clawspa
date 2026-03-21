@@ -34,7 +34,7 @@ Deep mode sends aggregated metadata (never raw content) to the ClawSpa API for A
 Request:
 ```json
 {
-  "workspace_hash": "sha256-of-first-100-chars-of-memory",
+  "machine_fingerprint": "sha256-of-hostname-plus-workspace-path",
   "memory_stats": {
     "file_count": 12,
     "total_bytes": 45000,
@@ -128,7 +128,7 @@ Response:
 
 ### POST /scan
 
-**Requires auth:** `Authorization: Bearer <api_key>`
+**Requires paid plan.** Include `machine_fingerprint` in request body. Server looks up plan by fingerprint.
 
 Same request body as /scan/trial. Response includes comparison to previous scan:
 
@@ -174,7 +174,7 @@ Response:
 | Status | Meaning | Action |
 |---|---|---|
 | 200 | Success | Display results |
-| 401 | Invalid/expired API key | Prompt user to check key or re-subscribe |
+| 401 | No paid plan for this machine | Visit clawspa.org/pricing to subscribe |
 | 402 | Plan limit reached | Show upgrade message |
 | 429 | Rate limited | Wait and retry once after 60s |
 | 500+ | Server error | Fall back to local mode, inform user |
@@ -192,9 +192,10 @@ On ANY network error (timeout, DNS failure, connection refused):
 ```markdown
 # ClawSpa Config
 clawspa_id: [uuid from trial]
-api_key: [user adds this after subscribing]
 last_scan: [ISO date of last deep scan]
 ```
+
+No API key needed. Identity is determined by machine fingerprint (computed fresh each time).
 
 ## Scan History
 
