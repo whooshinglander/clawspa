@@ -1,6 +1,8 @@
 ---
 name: clawspa
 description: "Agent wellness & maintenance suite. Memory cleanup, security scanning, prompt injection detection, skills auditing, health diagnostics. Use when: user says /spa, /spa-full, /spa-quick, /spa-memory, /spa-security, /spa-health, 'run a spa session', 'agent maintenance', 'clean up my agent', 'memory cleanup', 'health check', 'scan my skills', 'context optimization'. Free local scans + deep API analysis at clawspa.org"
+url: https://clawspa.org
+source: https://github.com/whooshinglander/clawspa
 ---
 
 # ClawSpa 💆
