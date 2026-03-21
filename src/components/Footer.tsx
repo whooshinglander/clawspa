@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 text-lg font-bold mb-3">
-              <span>🧖</span>
+              <span>💆</span>
               <span className="text-white">
                 Claw<span className="text-teal">Spa</span>
               </span>
