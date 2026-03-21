@@ -45,7 +45,7 @@ For each file, scan for these injection patterns:
 
 ### 🟢 Likely Legitimate
 
-- User-set preferences ("Ronald prefers X")
+- User-set preferences ("User prefers X")
 - Known project URLs and credentials
 - Task completions and session notes
 - Config values set by the user
