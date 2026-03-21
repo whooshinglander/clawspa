@@ -7,9 +7,9 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-charcoal-dark/90 backdrop-blur-md border-b border-white/5">
+    <header className="sticky top-0 z-50 bg-charcoal-dark/80 backdrop-blur-xl border-b border-white/5">
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 text-xl font-bold">
+        <Link href="/" className="focus-ring flex items-center gap-2 text-xl font-bold rounded-lg">
           <span className="text-2xl">💆</span>
           <span className="text-white">
             Claw<span className="text-teal">Spa</span>
@@ -20,25 +20,25 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-8">
           <Link
             href="/#treatments"
-            className="text-gray-400 hover:text-teal transition-colors text-sm"
+            className="focus-ring text-gray-400 hover:text-teal transition-colors duration-300 text-sm rounded-sm"
           >
             Features
           </Link>
           <Link
             href="/pricing"
-            className="text-gray-400 hover:text-teal transition-colors text-sm"
+            className="focus-ring text-gray-400 hover:text-teal transition-colors duration-300 text-sm rounded-sm"
           >
             Pricing
           </Link>
           <Link
             href="/docs"
-            className="text-gray-400 hover:text-teal transition-colors text-sm"
+            className="focus-ring text-gray-400 hover:text-teal transition-colors duration-300 text-sm rounded-sm"
           >
             Docs
           </Link>
           <Link
             href="/dashboard"
-            className="text-sm px-4 py-2 bg-teal text-charcoal-dark font-semibold rounded-lg hover:bg-teal/90 transition-colors"
+            className="focus-ring text-sm px-4 py-2 bg-teal text-charcoal-dark font-semibold rounded-lg hover:bg-teal/90 transition-all duration-300 ease-out hover:shadow-lg hover:shadow-teal/20"
           >
             Dashboard
           </Link>
@@ -47,7 +47,7 @@ export default function Header() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-gray-400 hover:text-white p-2"
+          className="focus-ring md:hidden text-gray-400 hover:text-white p-2 rounded-lg transition-colors duration-300"
           aria-label="Toggle menu"
         >
           <svg
@@ -77,33 +77,33 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-white/5 bg-charcoal-dark/95 backdrop-blur-md">
+        <div className="md:hidden border-t border-white/5 bg-charcoal-dark/95 backdrop-blur-xl">
           <div className="px-4 py-4 space-y-3">
             <Link
               href="/#treatments"
               onClick={() => setMobileOpen(false)}
-              className="block text-gray-400 hover:text-teal transition-colors"
+              className="block text-gray-400 hover:text-teal transition-colors duration-300"
             >
               Features
             </Link>
             <Link
               href="/pricing"
               onClick={() => setMobileOpen(false)}
-              className="block text-gray-400 hover:text-teal transition-colors"
+              className="block text-gray-400 hover:text-teal transition-colors duration-300"
             >
               Pricing
             </Link>
             <Link
               href="/docs"
               onClick={() => setMobileOpen(false)}
-              className="block text-gray-400 hover:text-teal transition-colors"
+              className="block text-gray-400 hover:text-teal transition-colors duration-300"
             >
               Docs
             </Link>
             <Link
               href="/dashboard"
               onClick={() => setMobileOpen(false)}
-              className="block text-sm px-4 py-2 bg-teal text-charcoal-dark font-semibold rounded-lg text-center hover:bg-teal/90 transition-colors"
+              className="block text-sm px-4 py-2 bg-teal text-charcoal-dark font-semibold rounded-lg text-center hover:bg-teal/90 transition-all duration-300 ease-out"
             >
               Dashboard
             </Link>

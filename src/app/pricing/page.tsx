@@ -133,21 +133,21 @@ export default function PricingPage() {
 
   return (
     <main className="min-h-screen">
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-20">
-        <h1 className="text-4xl sm:text-5xl font-bold text-white text-center mb-4">Pricing</h1>
-        <p className="text-gray-400 text-center max-w-xl mx-auto mb-12">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 pb-24">
+        <h1 className="fade-in-up text-5xl sm:text-6xl font-extrabold text-white text-center mb-5">Pricing</h1>
+        <p className="fade-in-up fade-in-up-delay-1 text-gray-400 text-center max-w-xl mx-auto mb-16">
           Start free. Upgrade when your agent needs deeper care.
         </p>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {tiers.map((tier) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+          {tiers.map((tier, i) => (
             <div
               key={tier.name}
-              className={`rounded-xl p-6 border ${
+              className={`fade-in-up fade-in-up-delay-${i + 2} group rounded-xl p-8 border ${
                 tier.highlighted
                   ? "border-teal/50 bg-charcoal-light/80 ring-1 ring-teal/20"
                   : "border-white/5 bg-charcoal-light/50"
-              } flex flex-col`}
+              } flex flex-col hover:border-teal/40 transition-all duration-300 ease-out hover:-translate-y-0.5`}
             >
               {tier.highlighted && (
                 <div className="text-xs font-medium text-teal mb-3">Most popular</div>
@@ -157,8 +157,8 @@ export default function PricingPage() {
                 <span className="text-3xl font-bold text-white">{tier.price}</span>
                 <span className="text-gray-500 text-sm">{tier.period}</span>
               </div>
-              <p className="text-gray-500 text-sm mb-4">{tier.description}</p>
-              <ul className="space-y-2 mb-6 flex-1">
+              <p className="text-gray-500 text-sm mb-5">{tier.description}</p>
+              <ul className="space-y-2.5 mb-6 flex-1">
                 {tier.features.map((f) => (
                   <li key={f.text} className="text-sm flex items-start gap-2">
                     {f.included ? (
@@ -176,9 +176,9 @@ export default function PricingPage() {
                 <button
                   onClick={() => handleCheckout(tier.plan!)}
                   disabled={loading === tier.plan}
-                  className={`block text-center py-2.5 rounded-lg font-semibold text-sm transition-colors ${
+                  className={`focus-ring block text-center py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 ease-out ${
                     tier.highlighted
-                      ? "bg-teal text-charcoal-dark hover:bg-teal/90"
+                      ? "bg-teal text-charcoal-dark hover:bg-teal/90 hover:shadow-lg hover:shadow-teal/20"
                       : "border border-white/10 text-white hover:border-teal/50 hover:text-teal"
                   } disabled:opacity-50`}
                 >
@@ -187,7 +187,7 @@ export default function PricingPage() {
               ) : (
                 <a
                   href="/docs#installation"
-                  className="block text-center py-2.5 rounded-lg font-semibold text-sm border border-white/10 text-white hover:border-teal/50 hover:text-teal transition-colors"
+                  className="focus-ring block text-center py-2.5 rounded-lg font-semibold text-sm border border-white/10 text-white hover:border-teal/50 hover:text-teal transition-all duration-300 ease-out"
                 >
                   {tier.cta}
                 </a>
@@ -198,16 +198,16 @@ export default function PricingPage() {
 
         {/* FAQ */}
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-8">
+          <h2 className="fade-in-up text-2xl sm:text-3xl font-bold text-white text-center mb-12">
             Frequently asked questions
           </h2>
           <div className="space-y-4">
-            {faqs.map((faq) => (
+            {faqs.map((faq, i) => (
               <div
                 key={faq.q}
-                className="bg-charcoal-light/50 rounded-xl p-6 border border-white/5"
+                className={`fade-in-up fade-in-up-delay-${Math.min(i + 1, 6)} group bg-charcoal-light/50 rounded-xl p-8 border border-white/5 hover:border-teal/40 transition-all duration-300 ease-out`}
               >
-                <h3 className="text-white font-semibold mb-2">{faq.q}</h3>
+                <h3 className="text-white font-semibold mb-3">{faq.q}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">{faq.a}</p>
               </div>
             ))}
