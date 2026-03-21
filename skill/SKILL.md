@@ -3,7 +3,7 @@ name: clawspa
 description: "Agent wellness & maintenance suite. Memory cleanup, security scanning, prompt injection detection, skills auditing, health diagnostics. Use when: user says /spa, /spa-full, /spa-quick, /spa-memory, /spa-security, /spa-health, 'run a spa session', 'agent maintenance', 'clean up my agent', 'memory cleanup', 'health check', 'scan my skills', 'context optimization'. Free local scans + deep API analysis at clawspa.org"
 ---
 
-# ClawSpa 🧖
+# ClawSpa 💆
 
 5 treatments with **local** (free) and **deep** (API) modes:
 
@@ -11,7 +11,7 @@ description: "Agent wellness & maintenance suite. Memory cleanup, security scann
 - 🛡️ **Security Scan** — Audit skills for malicious patterns
 - 🍵 **Detox** — Detect prompt injection residue
 - 🧹 **Declutter** — Skills inventory + pruning recs
-- 💆 **Health Check** — Context usage, config review
+- 🩺 **Health Check** — Context usage, config review
 
 ## Commands
 
@@ -31,7 +31,7 @@ On first run, create `~/.openclaw/clawspa/` with `config.md` (api_key, clawspa_i
 
 **🧹 Declutter** — See `references/declutter.md`. List skills + disk size. Check usage. Rate: 🟢 Active (7d) 🟡 Idle (30d) 🔴 Dormant (30d+). Find overlaps. Never uninstall without approval.
 
-**💆 Health Check** — See `references/health-report.md`. Check context usage, memory flush, fallback model, memory_search directive. Generate report card.
+**🩺 Health Check** — See `references/health-report.md`. Check context usage, memory flush, fallback model, memory_search directive. Generate report card.
 
 ## Deep Mode (API)
 
@@ -48,14 +48,14 @@ Save to `memory/spa-reports/spa-report-YYYY-MM-DD.md`:
 
 ```
 ═══════════════════════════════════════
- 🧖 ClawSpa Health Report | [DATE] | [Local/Deep]
+ 💆 ClawSpa Health Report | [DATE] | [Local/Deep]
 ═══════════════════════════════════════
 📊 Memory: X files ~Y tokens | Skills: X | Context: X% | Config: X/5
 🧴 Stale: X | Dupes: X | Contradictions: X | Savings: ~X tokens
 🛡️ 🟢X 🟡X 🔴X
 🍵 Injections: X | Suspicious: X
 🧹 Active: X | Idle: X | Dormant: X | Remove: X
-💆 1. [urgent] 2. [second] 3. [third]
+🩺 1. [urgent] 2. [second] 3. [third]
 ═══════════════════════════════════════
 ```
 
