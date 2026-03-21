@@ -7,16 +7,16 @@ Deep mode sends aggregated metadata (never raw content) to the ClawSpa API for A
 ## Privacy Model
 
 **What IS sent:**
+- Machine fingerprint: SHA-256(hostname + workspace path) for identity
 - File counts and sizes (number of memory files, total bytes)
 - Token estimates
 - Skill names, versions, and declared permissions
 - Security flag summaries (e.g., "skill X contains base64 patterns in 3 files")
 - Config check results (boolean: memory_flush enabled? fallback model set?)
-- Workspace hash (SHA-256 of first 100 chars of MEMORY.md, for deduplication only)
 
 **What is NEVER sent:**
 - Raw memory content (no text from MEMORY.md, daily logs, or any user files)
-- Credentials, API keys, or tokens
+- Credentials, API keys, or tokens (no credentials stored locally either)
 - User names, emails, or personal information
 - Conversation history
 - File contents of any kind

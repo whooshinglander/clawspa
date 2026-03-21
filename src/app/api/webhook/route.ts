@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 import { supabase } from "@/lib/supabase";
-import { generateApiKey, hashApiKey } from "@/lib/utils";
 import Stripe from "stripe";
 
 export async function POST(req: NextRequest) {
@@ -24,6 +23,7 @@ export async function POST(req: NextRequest) {
     const email = session.customer_email;
     const plan = session.metadata?.plan || "solo";
     const customerId = session.customer as string;
+    const machineFingerprint = session.metadata?.machine_fingerprint || "";
 
     if (!email) {
       return NextResponse.json({ error: "No email in session" }, { status: 400 });
@@ -43,26 +43,24 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Failed to create user" }, { status: 500 });
     }
 
-    // Generate API key
-    const rawKey = generateApiKey();
-    const keyHash = hashApiKey(rawKey);
-
-    await supabase.from("clawspa_api_keys").insert({
-      key_hash: keyHash,
-      user_id: user.id,
-      plan,
-    });
-
-    // In production, you'd email the API key to the user here
-    // For now, we log it (the key is only available at creation time)
-    console.log(`New API key generated for ${email}: ${rawKey}`);
+    // Register machine fingerprint (no API key needed)
+    if (machineFingerprint) {
+      await supabase.from("clawspa_api_keys").upsert(
+        {
+          key_hash: machineFingerprint,
+          machine_fingerprint: machineFingerprint,
+          user_id: user.id,
+          plan,
+        },
+        { onConflict: "key_hash" }
+      );
+    }
   }
 
   if (event.type === "customer.subscription.deleted") {
     const subscription = event.data.object as Stripe.Subscription;
     const customerId = subscription.customer as string;
 
-    // Find user by customer ID and deactivate their key
     const { data: user } = await supabase
       .from("clawspa_users")
       .select("id")

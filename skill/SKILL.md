@@ -21,7 +21,7 @@ source: https://github.com/whooshinglander/clawspa
 
 ## Setup
 
-On first run, create `~/.openclaw/clawspa/` with `config.md` (clawspa_id only) and `history/`. API keys should be stored in system keychain (`security add-generic-password -a clawspa -s clawspa_api_key -w "KEY"`) not in plaintext files.
+On first run, create `~/.openclaw/clawspa/` with `config.md` (clawspa_id only) and `history/`. Identity is based on a machine fingerprint (SHA-256 of hostname + workspace path). No API keys or credentials stored.
 
 ## Local Treatments (free)
 
@@ -39,10 +39,10 @@ On first run, create `~/.openclaw/clawspa/` with `config.md` (clawspa_id only) a
 
 See `references/api-integration.md`.
 
-1. Read `~/.openclaw/clawspa/config.md`
-2. No key + no id → POST `https://clawspa.org/api/v1/scan/trial` with local stats, save clawspa_id
-3. Id but no key → check `/api/v1/scan/check`. Exhausted? Show upgrade to clawspa.org/pricing
-4. Key exists → POST `/api/v1/scan` with Bearer auth, save to history
+1. Compute machine fingerprint: `SHA-256(hostname + workspace_path)`
+2. Read `~/.openclaw/clawspa/config.md` for clawspa_id
+3. No id → first run: POST `https://clawspa.org/api/v1/scan/trial` with fingerprint + local stats, save returned clawspa_id
+4. Has id → POST `/api/v1/scan/check` with fingerprint. If paid plan active, run deep scan. If trial exhausted, show upgrade to clawspa.org/pricing
 
 ## Report Card
 

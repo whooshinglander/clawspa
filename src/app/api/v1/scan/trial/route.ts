@@ -8,18 +8,19 @@ export async function POST(req: NextRequest) {
   try {
     const payload = await req.json();
 
-    if (!payload.workspace_hash) {
-      return NextResponse.json({ error: "workspace_hash is required" }, { status: 400 });
+    const fingerprint = payload.machine_fingerprint;
+    if (!fingerprint) {
+      return NextResponse.json({ error: "machine_fingerprint is required" }, { status: 400 });
     }
 
     const ip = req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || "unknown";
     const ipHash = hashIp(ip);
 
-    // Check if trial already used for this workspace
+    // Check if trial already used for this machine
     const { data: existing } = await supabase
       .from("clawspa_trials")
       .select("clawspa_id")
-      .eq("workspace_hash", payload.workspace_hash)
+      .eq("workspace_hash", fingerprint)
       .single();
 
     if (existing) {
@@ -39,7 +40,7 @@ export async function POST(req: NextRequest) {
 
     const { error: insertError } = await supabase.from("clawspa_trials").insert({
       clawspa_id: clawspaId,
-      workspace_hash: payload.workspace_hash,
+      workspace_hash: fingerprint,
       ip_hash: ipHash,
       scan_data: payload,
       analysis_result: analysis,

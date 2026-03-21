@@ -9,7 +9,7 @@ const PRICE_IDS: Record<string, string | undefined> = {
 
 export async function POST(req: NextRequest) {
   try {
-    const { plan, email } = await req.json();
+    const { plan, email, machine_fingerprint } = await req.json();
 
     if (!plan || !email) {
       return NextResponse.json({ error: "plan and email are required" }, { status: 400 });
@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
       payment_method_types: ["card"],
       customer_email: email,
       line_items: [{ price: priceId, quantity: 1 }],
-      metadata: { plan },
+      metadata: { plan, machine_fingerprint: machine_fingerprint || "" },
       success_url: `${req.nextUrl.origin}/dashboard?checkout=success`,
       cancel_url: `${req.nextUrl.origin}/pricing?checkout=cancelled`,
     });

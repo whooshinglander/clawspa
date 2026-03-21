@@ -2,28 +2,29 @@ import { NextRequest, NextResponse } from "next/server";
 import { v4 as uuidv4 } from "uuid";
 import { supabase } from "@/lib/supabase";
 import { runDeepAnalysis } from "@/lib/analysis";
-import { hashApiKey } from "@/lib/utils";
 import { PLAN_LIMITS } from "@/lib/stripe";
 
 export async function POST(req: NextRequest) {
   try {
-    const authHeader = req.headers.get("authorization");
-    if (!authHeader?.startsWith("Bearer ")) {
-      return NextResponse.json({ error: "Missing or invalid authorization header" }, { status: 401 });
+    const payload = await req.json();
+    const { machine_fingerprint } = payload;
+
+    if (!machine_fingerprint) {
+      return NextResponse.json({ error: "machine_fingerprint is required" }, { status: 400 });
     }
 
-    const apiKey = authHeader.slice(7);
-    const keyHash = hashApiKey(apiKey);
-
-    // Validate API key
+    // Look up user by machine fingerprint
     const { data: keyRecord, error: keyError } = await supabase
       .from("clawspa_api_keys")
-      .select("id, user_id, plan, scans_this_month")
-      .eq("key_hash", keyHash)
+      .select("id, user_id, plan, scans_this_month, machine_fingerprint")
+      .eq("machine_fingerprint", machine_fingerprint)
       .single();
 
     if (keyError || !keyRecord) {
-      return NextResponse.json({ error: "Invalid API key" }, { status: 401 });
+      return NextResponse.json(
+        { error: "No paid plan found for this machine. Visit clawspa.org/pricing to subscribe.", upgrade_url: "/pricing" },
+        { status: 401 }
+      );
     }
 
     // Check plan limits
@@ -40,7 +41,6 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const payload = await req.json();
     const clawspaId = `cs_${uuidv4().replace(/-/g, "")}`;
 
     // Get previous scan for comparison
