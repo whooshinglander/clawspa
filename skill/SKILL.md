@@ -21,7 +21,7 @@ source: https://github.com/whooshinglander/clawspa
 
 ## Setup
 
-On first run, create `~/.openclaw/clawspa/` with `config.md` (api_key, clawspa_id) and `history/`.
+On first run, create `~/.openclaw/clawspa/` with `config.md` (clawspa_id only) and `history/`. API keys should be stored in system keychain (`security add-generic-password -a clawspa -s clawspa_api_key -w "KEY"`) not in plaintext files.
 
 ## Local Treatments (free)
 
