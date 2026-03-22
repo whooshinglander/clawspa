@@ -35,7 +35,7 @@ function SubscribeButton({ plan, highlighted }: { plan: string; highlighted: boo
         className={`focus-ring block w-full text-center py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 ease-out ${
           highlighted
             ? "bg-accent text-bg hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20"
-            : "border border-accent/40 text-accent hover:bg-accent/10 hover:border-accent/60"
+            : "bg-accent/20 text-text-primary border border-accent/40 hover:bg-accent/30 hover:border-accent/60"
         }`}
       >
         Subscribe
@@ -60,7 +60,7 @@ function SubscribeButton({ plan, highlighted }: { plan: string; highlighted: boo
         className={`focus-ring block w-full text-center py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 ease-out ${
           highlighted
             ? "bg-accent text-bg hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20"
-            : "border border-accent/40 text-accent hover:bg-accent/10 hover:border-accent/60"
+            : "bg-accent/20 text-text-primary border border-accent/40 hover:bg-accent/30 hover:border-accent/60"
         } disabled:opacity-50`}
       >
         {loading ? "Loading..." : "Continue"}
@@ -218,7 +218,7 @@ export default function PricingPage() {
               ) : (
                 <a
                   href="/docs#installation"
-                  className="focus-ring block text-center py-2.5 rounded-lg font-semibold text-sm border border-accent/30 text-accent/80 hover:bg-accent/10 hover:border-accent/50 hover:text-accent transition-all duration-300 ease-out"
+                  className="focus-ring block text-center py-2.5 rounded-lg font-semibold text-sm bg-accent/20 text-text-primary border border-accent/40 hover:bg-accent/30 hover:border-accent/60 transition-all duration-300 ease-out"
                 >
                   {tier.cta}
                 </a>
