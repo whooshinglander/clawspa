@@ -38,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
+      <body className={`${jakarta.variable} font-sans antialiased`}>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-SMDW25L045"
           strategy="afterInteractive"
@@ -49,8 +49,6 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-SMDW25L045');`}
         </Script>
-      </head>
-      <body className={`${jakarta.variable} font-sans antialiased`}>
         <Header />
         {children}
         <Footer />
