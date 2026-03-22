@@ -74,12 +74,13 @@ Use the template from SKILL.md. Fill each field:
 
 ```
 ═══════════════════════════════════════
- 🧖 ClawSpa Health Report | [DATE] | [Local/Deep]
+ 💆 ClawSpa Health Report | [DATE] | [Local/Deep]
 ═══════════════════════════════════════
 📊 Memory: [X] files ~[Y] tokens | Skills: [X] | Context: [X]% | Config: [X]/5
 🧴 Stale: [X] | Dupes: [X] | Contradictions: [X] | Savings: ~[X] tokens
 🛡️ 🟢[X] 🟡[X] 🔴[X]
 🍵 Injections: [X] | Suspicious: [X]
+🦴 Contradictions: [X] | At-risk: [X] | Automate: [X] | Stale: [X]
 🧹 Active: [X] | Idle: [X] | Dormant: [X] | Remove: [X]
 💆 1. [urgent] 2. [second] 3. [third]
 ═══════════════════════════════════════

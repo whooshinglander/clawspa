@@ -1,23 +1,24 @@
 ---
 name: clawspa
-description: "Agent wellness & maintenance suite. Memory cleanup, security scanning, prompt injection detection, skills auditing, health diagnostics. Use when: user says /spa, /spa-full, /spa-quick, /spa-memory, /spa-security, /spa-health, 'run a spa session', 'agent maintenance', 'clean up my agent', 'memory cleanup', 'health check', 'scan my skills', 'context optimization'. Free local scans + deep API analysis at clawspa.org"
+description: "Agent wellness & maintenance suite. Memory cleanup, security scanning, prompt injection detection, alignment adjustment, skills auditing, health diagnostics. Use when: user says /spa, /spa-full, /spa-quick, /spa-memory, /spa-security, /spa-health, /spa-align, 'run a spa session', 'agent maintenance', 'clean up my agent', 'memory cleanup', 'health check', 'scan my skills', 'context optimization', 'check alignment', 'instruction contradictions'. Free local scans + deep API analysis at clawspa.org"
 url: https://clawspa.org
 source: https://github.com/whooshinglander/clawspa
 ---
 
 # ClawSpa 💆
 
-5 treatments with **local** (free) and **deep** (API) modes:
+6 treatments with **local** (free) and **deep** (API) modes:
 
 - 🧴 **Deep Cleanse** — Memory optimization (MEMORY.md + daily logs)
 - 🛡️ **Security Scan** — Audit skills for malicious patterns
 - 🍵 **Detox** — Detect prompt injection residue
+- 🦴 **Alignment Adjustment** — Detects contradictions between your instructions, memory, and actual behavior
 - 🧹 **Declutter** — Skills inventory + pruning recs
 - 🩺 **Health Check** — Context usage, config review
 
 ## Commands
 
-`/spa` full local | `/spa-full` full deep | `/spa-quick` quick stats | `/spa-memory` cleanse only | `/spa-security` security only | `/spa-health` health only
+`/spa` full local | `/spa-full` full deep | `/spa-quick` quick stats | `/spa-memory` cleanse only | `/spa-security` security only | `/spa-health` health only | `/spa-align` alignment adjustment only
 
 ## Setup
 
@@ -30,6 +31,8 @@ On first run, create `~/.openclaw/clawspa/` with `config.md` (clawspa_id only) a
 **🛡️ Security Scan** — See `references/security-scan.md`. List skills from install paths. Scan for: base64, curl/wget to unknown URLs, eval/exec, env var refs ($HOME, $API_KEY, $SSH_KEY), obfuscated code, prompt override instructions. Rate: 🟢 Clean 🟡 Review 🔴 Suspicious.
 
 **🍵 Detox** — See `references/detox.md`. Scan memory for injection residue: override instructions, unexplained URLs, base64 strings, tone shifts. Report without deleting.
+
+**🦴 Alignment Adjustment** — See `references/alignment-adjustment.md`. Detect misalignment between user intent and agent config. Scan for: instruction contradictions across files, at-risk instructions that won't survive compaction, manual work that should be automated, stale/ignored instructions. Present findings as suggestions, never auto-modify.
 
 **🧹 Declutter** — See `references/declutter.md`. List skills + disk size. Check usage. Rate: 🟢 Active (7d) 🟡 Idle (30d) 🔴 Dormant (30d+). Find overlaps. Never uninstall without approval.
 
@@ -56,6 +59,7 @@ Save to `memory/spa-reports/spa-report-YYYY-MM-DD.md`:
 🧴 Stale: X | Dupes: X | Contradictions: X | Savings: ~X tokens
 🛡️ 🟢X 🟡X 🔴X
 🍵 Injections: X | Suspicious: X
+🦴 Contradictions: X | At-risk: X | Automate: X | Stale: X
 🧹 Active: X | Idle: X | Dormant: X | Remove: X
 🩺 1. [urgent] 2. [second] 3. [third]
 ═══════════════════════════════════════
