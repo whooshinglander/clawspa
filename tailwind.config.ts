@@ -29,7 +29,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        serif: ["var(--font-serif-display)", "Georgia", "serif"],
+        display: ["var(--font-display)", "Georgia", "serif"],
       },
       keyframes: {
         "fade-up": {

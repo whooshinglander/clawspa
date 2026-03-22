@@ -31,7 +31,7 @@ export default function DashboardPage() {
     <main className="min-h-screen flex items-center justify-center px-4">
       <div className="max-w-md w-full text-center">
         <div className="text-6xl mb-6">💆</div>
-        <h1 className="text-3xl sm:text-4xl font-bold text-text-primary mb-4">Dashboard Coming Soon</h1>
+        <h1 className="text-3xl sm:text-4xl font-display font-semibold text-text-primary mb-4">Dashboard Coming Soon</h1>
         <p className="text-text-secondary mb-8">
           Scan history, trend analysis, and team management, all in one place. Join the waitlist to
           get early access.

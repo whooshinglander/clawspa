@@ -127,7 +127,7 @@ export default function Home() {
           <div className="fade-in-up inline-block px-4 py-1.5 mb-8 text-xs font-medium text-accent bg-accent/10 rounded-full border border-accent/20">
             Agent wellness for the OpenClaw ecosystem
           </div>
-          <h1 className="fade-in-up fade-in-up-delay-1 text-5xl sm:text-6xl lg:text-7xl font-extrabold text-text-primary leading-[1.1] mb-8 text-balance">
+          <h1 className="fade-in-up fade-in-up-delay-1 text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-text-primary leading-[1.1] mb-8 text-balance">
             A spa day for your
             <br />
             <span className="text-accent">OpenClaw agent</span>
@@ -156,7 +156,7 @@ export default function Home() {
       {/* Problem */}
       <section className="bg-[#151510] py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="fade-in-up text-3xl sm:text-4xl font-bold text-text-primary text-center mb-5">
+          <h2 className="fade-in-up text-3xl sm:text-4xl font-display font-semibold text-text-primary text-center mb-5">
             Your agent is overdue for maintenance
           </h2>
           <p className="fade-in-up fade-in-up-delay-1 text-text-secondary text-center max-w-2xl mx-auto mb-16">
@@ -194,7 +194,7 @@ export default function Home() {
       {/* Treatments */}
       <section id="treatments" className="py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="fade-in-up text-3xl sm:text-4xl font-bold text-text-primary text-center mb-5">
+          <h2 className="fade-in-up text-3xl sm:text-4xl font-display font-semibold text-text-primary text-center mb-5">
             Six treatments, one command
           </h2>
           <p className="fade-in-up fade-in-up-delay-1 text-text-secondary text-center max-w-xl mx-auto mb-16">
@@ -220,7 +220,7 @@ export default function Home() {
       {/* How It Works */}
       <section className="bg-[#151510] py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="fade-in-up text-3xl sm:text-4xl font-bold text-text-primary text-center mb-16">
+          <h2 className="fade-in-up text-3xl sm:text-4xl font-display font-semibold text-text-primary text-center mb-16">
             How it works
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -242,7 +242,7 @@ export default function Home() {
       {/* Free vs Deep Comparison */}
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="fade-in-up text-3xl sm:text-4xl font-bold text-text-primary text-center mb-16">
+          <h2 className="fade-in-up text-3xl sm:text-4xl font-display font-semibold text-text-primary text-center mb-16">
             Free scan vs Deep analysis
           </h2>
           <div className="fade-in-up fade-in-up-delay-1 overflow-x-auto">
@@ -293,7 +293,7 @@ export default function Home() {
       {/* Pricing */}
       <section className="bg-[#151510] py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="fade-in-up text-3xl sm:text-4xl font-bold text-text-primary text-center mb-5">
+          <h2 className="fade-in-up text-3xl sm:text-4xl font-display font-semibold text-text-primary text-center mb-5">
             Simple, transparent pricing
           </h2>
           <p className="fade-in-up fade-in-up-delay-1 text-text-secondary text-center mb-16">Start free. Upgrade when you need deeper insights.</p>

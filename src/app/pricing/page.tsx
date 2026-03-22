@@ -134,7 +134,7 @@ export default function PricingPage() {
   return (
     <main className="min-h-screen">
       <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 pb-24">
-        <h1 className="fade-in-up text-5xl sm:text-6xl font-extrabold text-text-primary text-center mb-5">Pricing</h1>
+        <h1 className="fade-in-up text-5xl sm:text-6xl font-display font-bold text-text-primary text-center mb-5">Pricing</h1>
         <p className="fade-in-up fade-in-up-delay-1 text-text-secondary text-center max-w-xl mx-auto mb-16">
           Start free. Upgrade when your agent needs deeper care.
         </p>
@@ -198,7 +198,7 @@ export default function PricingPage() {
 
         {/* FAQ */}
         <div className="max-w-3xl mx-auto">
-          <h2 className="fade-in-up text-2xl sm:text-3xl font-bold text-text-primary text-center mb-12">
+          <h2 className="fade-in-up text-2xl sm:text-3xl font-display font-semibold text-text-primary text-center mb-12">
             Frequently asked questions
           </h2>
           <div className="space-y-4">

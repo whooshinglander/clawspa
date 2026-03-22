@@ -76,11 +76,11 @@ export default function DocsPage() {
 
           {/* Content */}
           <div className="flex-1 min-w-0">
-            <h1 className="text-4xl font-bold text-text-primary mb-8">Documentation</h1>
+            <h1 className="text-4xl font-display font-semibold text-text-primary mb-8">Documentation</h1>
 
             {/* Installation */}
             <section id="installation" className="mb-16 scroll-mt-24">
-              <h2 className="text-2xl font-bold text-text-primary mb-4">Installation</h2>
+              <h2 className="text-2xl font-display font-semibold text-text-primary mb-4">Installation</h2>
               <p className="text-text-secondary mb-4">
                 Install ClawSpa with a single command using the ClawHub package manager:
               </p>
@@ -97,7 +97,7 @@ clawspa = "latest"`}</CodeBlock>
 
             {/* Commands */}
             <section id="commands" className="mb-16 scroll-mt-24">
-              <h2 className="text-2xl font-bold text-text-primary mb-4">Commands</h2>
+              <h2 className="text-2xl font-display font-semibold text-text-primary mb-4">Commands</h2>
               <div className="space-y-4">
                 <div className="bg-bg-card rounded-xl p-5 border border-border/50">
                   <h3 className="text-text-primary font-mono font-semibold mb-2">/spa</h3>
@@ -130,7 +130,7 @@ clawspa = "latest"`}</CodeBlock>
 
             {/* API Key Setup */}
             <section id="api-key-setup" className="mb-16 scroll-mt-24">
-              <h2 className="text-2xl font-bold text-text-primary mb-4">API Key Setup</h2>
+              <h2 className="text-2xl font-display font-semibold text-text-primary mb-4">API Key Setup</h2>
               <p className="text-text-secondary mb-4">
                 After subscribing to a paid plan, you&apos;ll receive an API key starting with{" "}
                 <code className="text-accent bg-accent/10 px-1.5 py-0.5 rounded text-sm">csk_</code>.
@@ -148,7 +148,7 @@ clawspa = "latest"`}</CodeBlock>
 
             {/* Weekly Scans */}
             <section id="weekly-scans" className="mb-16 scroll-mt-24">
-              <h2 className="text-2xl font-bold text-text-primary mb-4">Weekly Scans</h2>
+              <h2 className="text-2xl font-display font-semibold text-text-primary mb-4">Weekly Scans</h2>
               <p className="text-text-secondary mb-4">
                 Set up automated weekly scans to keep your agent in peak condition:
               </p>
@@ -163,7 +163,7 @@ clawspa = "latest"`}</CodeBlock>
 
             {/* API Reference */}
             <section id="api-reference" className="mb-16 scroll-mt-24">
-              <h2 className="text-2xl font-bold text-text-primary mb-4">API Reference</h2>
+              <h2 className="text-2xl font-display font-semibold text-text-primary mb-4">API Reference</h2>
               <p className="text-text-secondary mb-6">
                 All endpoints are available at{" "}
                 <code className="text-accent bg-accent/10 px-1.5 py-0.5 rounded text-sm">
@@ -220,7 +220,7 @@ clawspa = "latest"`}</CodeBlock>
 
             {/* Privacy */}
             <section id="privacy" className="mb-16 scroll-mt-24">
-              <h2 className="text-2xl font-bold text-text-primary mb-4">Privacy — What We Send</h2>
+              <h2 className="text-2xl font-display font-semibold text-text-primary mb-4">Privacy — What We Send</h2>
               <p className="text-text-secondary mb-4">
                 ClawSpa only sends anonymized workspace metadata. Here&apos;s the exact payload
                 format:

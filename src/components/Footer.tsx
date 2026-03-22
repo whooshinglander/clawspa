@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Left column */}
           <div>
-            <Link href="/" className="flex items-center gap-2 text-lg font-bold mb-4">
+            <Link href="/" className="flex items-center gap-2 text-lg font-display font-semibold mb-4 tracking-wide">
               <span>💆</span>
               <span className="text-text-primary">
                 Claw<span className="text-accent">Spa</span>
