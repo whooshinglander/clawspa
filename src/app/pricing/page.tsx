@@ -2,6 +2,73 @@
 
 import { useState } from "react";
 
+function SubscribeButton({ plan, highlighted }: { plan: string; highlighted: boolean }) {
+  const [showEmail, setShowEmail] = useState(false);
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  async function handleCheckout(e: React.FormEvent) {
+    e.preventDefault();
+    if (!email) return;
+    setLoading(true);
+    try {
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ plan, email }),
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      }
+    } catch {
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  if (!showEmail) {
+    return (
+      <button
+        onClick={() => setShowEmail(true)}
+        className={`focus-ring block w-full text-center py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 ease-out ${
+          highlighted
+            ? "bg-accent text-bg hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20"
+            : "border border-border text-text-primary hover:border-accent/50 hover:text-accent"
+        }`}
+      >
+        Subscribe
+      </button>
+    );
+  }
+
+  return (
+    <form onSubmit={handleCheckout} className="space-y-2">
+      <input
+        type="email"
+        required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="you@example.com"
+        autoFocus
+        className="w-full px-3 py-2 bg-bg-input border border-border rounded-lg text-text-primary placeholder-text-muted text-sm focus:outline-none focus:border-accent/50 transition-colors"
+      />
+      <button
+        type="submit"
+        disabled={loading}
+        className={`focus-ring block w-full text-center py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 ease-out ${
+          highlighted
+            ? "bg-accent text-bg hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20"
+            : "border border-border text-text-primary hover:border-accent/50 hover:text-accent"
+        } disabled:opacity-50`}
+      >
+        {loading ? "Loading..." : "Continue"}
+      </button>
+    </form>
+  );
+}
+
 const tiers = [
   {
     name: "Free",
@@ -105,32 +172,6 @@ const faqs = [
 ];
 
 export default function PricingPage() {
-  const [loading, setLoading] = useState<string | null>(null);
-
-  async function handleCheckout(plan: string) {
-    setLoading(plan);
-    try {
-      const email = prompt("Enter your email to continue:");
-      if (!email) {
-        setLoading(null);
-        return;
-      }
-      const res = await fetch("/api/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ plan, email }),
-      });
-      const data = await res.json();
-      if (data.url) {
-        window.location.href = data.url;
-      }
-    } catch {
-      alert("Something went wrong. Please try again.");
-    } finally {
-      setLoading(null);
-    }
-  }
-
   return (
     <main className="min-h-screen">
       <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 pb-24">
@@ -173,17 +214,7 @@ export default function PricingPage() {
                 ))}
               </ul>
               {tier.plan ? (
-                <button
-                  onClick={() => handleCheckout(tier.plan!)}
-                  disabled={loading === tier.plan}
-                  className={`focus-ring block text-center py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 ease-out ${
-                    tier.highlighted
-                      ? "bg-accent text-bg hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20"
-                      : "border border-border text-text-primary hover:border-accent/50 hover:text-accent"
-                  } disabled:opacity-50`}
-                >
-                  {loading === tier.plan ? "Loading..." : tier.cta}
-                </button>
+                <SubscribeButton plan={tier.plan} highlighted={tier.highlighted} />
               ) : (
                 <a
                   href="/docs#installation"
