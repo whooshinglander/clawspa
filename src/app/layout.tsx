@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-sans" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const dmSerifDisplay = DM_Serif_Display({ weight: "400", subsets: ["latin"], variable: "--font-serif-display" });
 
 export const metadata: Metadata = {
   title: "ClawSpa — Agent Wellness Suite",
@@ -38,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${jakarta.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${dmSerifDisplay.variable} font-sans min-h-screen antialiased`}>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-SMDW25L045"
           strategy="afterInteractive"

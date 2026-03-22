@@ -9,47 +9,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        charcoal: {
-          DEFAULT: "#1a1a2e",
-          light: "#16213e",
-          dark: "#0f0f23",
+        bg: {
+          DEFAULT: "var(--bg)",
+          card: "var(--bg-card)",
+          hover: "var(--bg-hover)",
+          input: "var(--bg-input)",
         },
-        teal: {
-          DEFAULT: "#4ecdc4",
-          dim: "#3ba89f",
+        border: {
+          DEFAULT: "var(--border)",
+          hover: "var(--border-hover)",
         },
-        /* Tinted neutrals — hinted toward the charcoal-blue brand hue */
-        neutral: {
-          950: "#0a0a18",
-          900: "#12121f",
-          800: "#1e1e32",
-          700: "#2a2a42",
-          600: "#3d3d58",
-          500: "#56566e",
-          400: "#7e7e94",
-          300: "#a8a8ba",
-          200: "#c8c8d6",
-          100: "#e4e4ec",
-          50: "#f2f2f6",
+        accent: {
+          DEFAULT: "var(--accent)",
+          hover: "var(--accent-hover)",
         },
-        /* Override default grays with teal-tinted variants */
-        gray: {
-          950: "#0a0a18",
-          900: "#12121f",
-          800: "#1e1e32",
-          700: "#2a2a42",
-          600: "#3d3d58",
-          500: "#56566e",
-          400: "#7e7e94",
-          300: "#a8a8ba",
-          200: "#c8c8d6",
-          100: "#e4e4ec",
-          50: "#f2f2f6",
-        },
+        "text-primary": "var(--text-primary)",
+        "text-secondary": "var(--text-secondary)",
+        "text-muted": "var(--text-muted)",
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+        serif: ["var(--font-serif-display)", "Georgia", "serif"],
       },
       keyframes: {
         "fade-up": {
@@ -64,10 +44,6 @@ const config: Config = {
       animation: {
         "fade-up": "fade-up 0.6s cubic-bezier(0.25, 1, 0.5, 1) both",
         "fade-in": "fade-in 0.5s cubic-bezier(0.25, 1, 0.5, 1) both",
-      },
-      transitionTimingFunction: {
-        "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)",
-        "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)",
       },
     },
   },

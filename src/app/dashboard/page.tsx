@@ -31,17 +31,17 @@ export default function DashboardPage() {
     <main className="min-h-screen flex items-center justify-center px-4">
       <div className="max-w-md w-full text-center">
         <div className="text-6xl mb-6">💆</div>
-        <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">Dashboard Coming Soon</h1>
-        <p className="text-gray-400 mb-8">
-          Scan history, trend analysis, and team management — all in one place. Join the waitlist to
+        <h1 className="text-3xl sm:text-4xl font-bold text-text-primary mb-4">Dashboard Coming Soon</h1>
+        <p className="text-text-secondary mb-8">
+          Scan history, trend analysis, and team management, all in one place. Join the waitlist to
           get early access.
         </p>
 
         {submitted ? (
-          <div className="bg-teal/10 border border-teal/20 rounded-xl p-6">
+          <div className="bg-accent/10 border border-accent/20 rounded-xl p-6">
             <div className="text-2xl mb-2">✓</div>
-            <p className="text-teal font-semibold">You&apos;re on the list!</p>
-            <p className="text-gray-400 text-sm mt-1">
+            <p className="text-accent font-semibold">You&apos;re on the list!</p>
+            <p className="text-text-secondary text-sm mt-1">
               We&apos;ll email you when the dashboard launches.
             </p>
           </div>
@@ -53,11 +53,11 @@ export default function DashboardPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
-              className="flex-1 px-4 py-3 bg-charcoal-light border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-teal/50 transition-colors"
+              className="flex-1 px-4 py-3 bg-bg-card border border-border rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:border-accent/50 transition-colors"
             />
             <button
               type="submit"
-              className="px-6 py-3 bg-teal text-charcoal-dark font-semibold rounded-lg hover:bg-teal/90 transition-colors whitespace-nowrap"
+              className="px-6 py-3 bg-accent text-bg font-semibold rounded-lg hover:bg-accent-hover transition-colors whitespace-nowrap"
             >
               Join Waitlist
             </button>

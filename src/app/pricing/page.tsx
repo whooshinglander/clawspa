@@ -88,7 +88,7 @@ const faqs = [
   },
   {
     q: "What data do you collect?",
-    a: "We receive anonymized workspace metadata — memory stats, skill lists, config checksums, and security flags. No conversation content, personal data, or source code is ever sent. See our docs for the exact payload format.",
+    a: "We receive anonymized workspace metadata: memory stats, skill lists, config checksums, and security flags. No conversation content, personal data, or source code is ever sent. See our docs for the exact payload format.",
   },
   {
     q: "Can I cancel anytime?",
@@ -100,7 +100,7 @@ const faqs = [
   },
   {
     q: "Do you support annual billing?",
-    a: "Not yet — but it's on the roadmap. Subscribe monthly for now and we'll offer a migration when annual plans launch.",
+    a: "Not yet, but it's on the roadmap. Subscribe monthly for now and we'll offer a migration when annual plans launch.",
   },
 ];
 
@@ -134,8 +134,8 @@ export default function PricingPage() {
   return (
     <main className="min-h-screen">
       <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 pb-24">
-        <h1 className="fade-in-up text-5xl sm:text-6xl font-extrabold text-white text-center mb-5">Pricing</h1>
-        <p className="fade-in-up fade-in-up-delay-1 text-gray-400 text-center max-w-xl mx-auto mb-16">
+        <h1 className="fade-in-up text-5xl sm:text-6xl font-extrabold text-text-primary text-center mb-5">Pricing</h1>
+        <p className="fade-in-up fade-in-up-delay-1 text-text-secondary text-center max-w-xl mx-auto mb-16">
           Start free. Upgrade when your agent needs deeper care.
         </p>
 
@@ -143,30 +143,30 @@ export default function PricingPage() {
           {tiers.map((tier, i) => (
             <div
               key={tier.name}
-              className={`fade-in-up fade-in-up-delay-${i + 2} group rounded-xl p-8 border ${
+              className={`fade-in-up fade-in-up-delay-${Math.min(i + 2, 6)} group rounded-xl p-8 border ${
                 tier.highlighted
-                  ? "border-teal/50 bg-charcoal-light/80 ring-1 ring-teal/20"
-                  : "border-white/5 bg-charcoal-light/50"
-              } flex flex-col hover:border-teal/40 transition-all duration-300 ease-out hover:-translate-y-0.5`}
+                  ? "border-accent/50 bg-bg-card ring-1 ring-accent/20"
+                  : "border-border/50 bg-bg-card"
+              } flex flex-col hover:border-accent/40 transition-all duration-300 ease-out hover:-translate-y-0.5`}
             >
               {tier.highlighted && (
-                <div className="text-xs font-medium text-teal mb-3">Most popular</div>
+                <div className="text-xs font-medium text-accent mb-3">Most popular</div>
               )}
-              <h2 className="text-white font-bold text-xl mb-1">{tier.name}</h2>
+              <h2 className="text-text-primary font-bold text-xl mb-1">{tier.name}</h2>
               <div className="mb-2">
-                <span className="text-3xl font-bold text-white">{tier.price}</span>
-                <span className="text-gray-500 text-sm">{tier.period}</span>
+                <span className="text-3xl font-bold text-text-primary">{tier.price}</span>
+                <span className="text-text-muted text-sm">{tier.period}</span>
               </div>
-              <p className="text-gray-500 text-sm mb-5">{tier.description}</p>
+              <p className="text-text-muted text-sm mb-5">{tier.description}</p>
               <ul className="space-y-2.5 mb-6 flex-1">
                 {tier.features.map((f) => (
                   <li key={f.text} className="text-sm flex items-start gap-2">
                     {f.included ? (
-                      <span className="text-teal mt-0.5">✓</span>
+                      <span className="text-accent mt-0.5">✓</span>
                     ) : (
-                      <span className="text-gray-600 mt-0.5">—</span>
+                      <span className="text-text-muted mt-0.5">—</span>
                     )}
-                    <span className={f.included ? "text-gray-300" : "text-gray-600"}>
+                    <span className={f.included ? "text-text-secondary" : "text-text-muted"}>
                       {f.text}
                     </span>
                   </li>
@@ -178,8 +178,8 @@ export default function PricingPage() {
                   disabled={loading === tier.plan}
                   className={`focus-ring block text-center py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 ease-out ${
                     tier.highlighted
-                      ? "bg-teal text-charcoal-dark hover:bg-teal/90 hover:shadow-lg hover:shadow-teal/20"
-                      : "border border-white/10 text-white hover:border-teal/50 hover:text-teal"
+                      ? "bg-accent text-bg hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20"
+                      : "border border-border text-text-primary hover:border-accent/50 hover:text-accent"
                   } disabled:opacity-50`}
                 >
                   {loading === tier.plan ? "Loading..." : tier.cta}
@@ -187,7 +187,7 @@ export default function PricingPage() {
               ) : (
                 <a
                   href="/docs#installation"
-                  className="focus-ring block text-center py-2.5 rounded-lg font-semibold text-sm border border-white/10 text-white hover:border-teal/50 hover:text-teal transition-all duration-300 ease-out"
+                  className="focus-ring block text-center py-2.5 rounded-lg font-semibold text-sm border border-border text-text-primary hover:border-accent/50 hover:text-accent transition-all duration-300 ease-out"
                 >
                   {tier.cta}
                 </a>
@@ -198,17 +198,17 @@ export default function PricingPage() {
 
         {/* FAQ */}
         <div className="max-w-3xl mx-auto">
-          <h2 className="fade-in-up text-2xl sm:text-3xl font-bold text-white text-center mb-12">
+          <h2 className="fade-in-up text-2xl sm:text-3xl font-bold text-text-primary text-center mb-12">
             Frequently asked questions
           </h2>
           <div className="space-y-4">
             {faqs.map((faq, i) => (
               <div
                 key={faq.q}
-                className={`fade-in-up fade-in-up-delay-${Math.min(i + 1, 6)} group bg-charcoal-light/50 rounded-xl p-8 border border-white/5 hover:border-teal/40 transition-all duration-300 ease-out`}
+                className={`fade-in-up fade-in-up-delay-${Math.min(i + 1, 6)} group bg-bg-card rounded-xl p-8 border border-border/50 hover:border-accent/40 transition-all duration-300 ease-out`}
               >
-                <h3 className="text-white font-semibold mb-3">{faq.q}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{faq.a}</p>
+                <h3 className="text-text-primary font-semibold mb-3">{faq.q}</h3>
+                <p className="text-text-secondary text-sm leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>

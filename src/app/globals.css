@@ -2,24 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Design tokens (OPCAI-matched warm dark palette) ── */
+:root {
+  color-scheme: dark;
+  --bg:            #1A1A14;
+  --bg-card:       #28281E;
+  --bg-hover:      #3A3A28;
+  --bg-input:      #232318;
+  --border:        #4A4A35;
+  --border-hover:  #8B7A2E;
+  --text-primary:  #E8E0C8;
+  --text-secondary:#A09878;
+  --text-muted:    #807860;
+  --accent:        #C8A832;
+  --accent-hover:  #D4B840;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #1a1a2e;
-  color: #e0e0e0;
+  background: var(--bg);
+  color: var(--text-primary);
   line-height: 1.7;
 }
 
 ::selection {
-  background-color: rgba(78, 205, 196, 0.35);
-  color: #f2f2f6;
+  background-color: rgba(200, 168, 50, 0.35);
+  color: #E8E0C8;
 }
 
 ::-moz-selection {
-  background-color: rgba(78, 205, 196, 0.35);
-  color: #f2f2f6;
+  background-color: rgba(200, 168, 50, 0.35);
+  color: #E8E0C8;
 }
 
 @layer utilities {
@@ -55,25 +71,37 @@ body {
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f0f23;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e1e32;
-  border-radius: 4px;
+  background: var(--border-hover);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4ecdc4;
+  background: var(--text-muted);
 }
 
-/* Focus ring utility for interactive elements */
-@layer utilities {
-  .focus-ring {
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal/50 focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal-dark;
-  }
+/* Focus ring utility */
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px rgba(200, 168, 50, 0.5);
+}
+
+/* Prevent double-tap zoom */
+button, a, [role="button"] {
+  touch-action: manipulation;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
 }

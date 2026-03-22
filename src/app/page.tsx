@@ -20,6 +20,12 @@ const treatments = [
       "Reset poisoned configs, remove contradictory directives, and restore clean operational state.",
   },
   {
+    emoji: "🦴",
+    title: "Alignment Adjustment",
+    description:
+      "Find contradictions between your instructions, memory, and actual behavior. Catch at-risk rules that won't survive compaction.",
+  },
+  {
     emoji: "🧹",
     title: "Declutter",
     description:
@@ -116,30 +122,30 @@ export default function Home() {
     <main>
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-teal/5 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent pointer-events-none" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 pb-24 text-center relative">
-          <div className="fade-in-up inline-block px-4 py-1.5 mb-8 text-xs font-medium text-teal bg-teal/10 rounded-full border border-teal/20">
+          <div className="fade-in-up inline-block px-4 py-1.5 mb-8 text-xs font-medium text-accent bg-accent/10 rounded-full border border-accent/20">
             Agent wellness for the OpenClaw ecosystem
           </div>
-          <h1 className="fade-in-up fade-in-up-delay-1 text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-8 text-balance">
+          <h1 className="fade-in-up fade-in-up-delay-1 text-5xl sm:text-6xl lg:text-7xl font-extrabold text-text-primary leading-[1.1] mb-8 text-balance">
             A spa day for your
             <br />
-            <span className="text-teal">OpenClaw agent</span>
+            <span className="text-accent">OpenClaw agent</span>
           </h1>
-          <p className="fade-in-up fade-in-up-delay-2 text-gray-400 text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="fade-in-up fade-in-up-delay-2 text-text-secondary text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
             Deep cleanse memory, scan for security threats, detox configs, and keep your agent
             running at peak performance.
           </p>
           <div className="fade-in-up fade-in-up-delay-3 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/docs#installation"
-              className="focus-ring px-8 py-3.5 bg-teal text-charcoal-dark font-semibold rounded-lg hover:bg-teal/90 transition-all duration-300 ease-out text-lg hover:shadow-lg hover:shadow-teal/20"
+              className="focus-ring px-8 py-3.5 bg-accent text-bg font-semibold rounded-lg hover:bg-accent-hover transition-all duration-300 ease-out text-lg hover:shadow-lg hover:shadow-accent/20"
             >
               Install Free
             </Link>
             <Link
               href="/pricing"
-              className="focus-ring px-8 py-3.5 border border-white/10 text-white font-semibold rounded-lg hover:border-teal/50 hover:text-teal transition-all duration-300 ease-out text-lg"
+              className="focus-ring px-8 py-3.5 border border-border text-text-primary font-semibold rounded-lg hover:border-accent/50 hover:text-accent transition-all duration-300 ease-out text-lg"
             >
               View Pricing
             </Link>
@@ -148,35 +154,35 @@ export default function Home() {
       </section>
 
       {/* Problem */}
-      <section className="bg-charcoal-dark/50 py-24">
+      <section className="bg-[#151510] py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="fade-in-up text-3xl sm:text-4xl font-bold text-white text-center mb-5">
+          <h2 className="fade-in-up text-3xl sm:text-4xl font-bold text-text-primary text-center mb-5">
             Your agent is overdue for maintenance
           </h2>
-          <p className="fade-in-up fade-in-up-delay-1 text-gray-400 text-center max-w-2xl mx-auto mb-16">
+          <p className="fade-in-up fade-in-up-delay-1 text-text-secondary text-center max-w-2xl mx-auto mb-16">
             Most OpenClaw agents accumulate technical debt silently. Here&apos;s what&apos;s lurking in yours.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="fade-in-up fade-in-up-delay-2 group bg-charcoal rounded-xl p-8 border border-white/5 hover:border-teal/40 transition-all duration-300 ease-out hover:-translate-y-0.5">
+            <div className="fade-in-up fade-in-up-delay-2 group bg-bg-card rounded-xl p-8 border border-border/50 hover:border-accent/40 transition-all duration-300 ease-out hover:-translate-y-0.5">
               <div className="text-4xl mb-4">🗑️</div>
-              <h3 className="text-white font-semibold text-lg mb-2 group-hover:text-teal transition-colors duration-300">Memory Bloat</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <h3 className="text-text-primary font-semibold text-lg mb-2 group-hover:text-accent transition-colors duration-300">Memory Bloat</h3>
+              <p className="text-text-secondary text-sm leading-relaxed">
                 Dead references, stale context entries, and forgotten conversations slowly consume
                 your agent&apos;s working memory.
               </p>
             </div>
-            <div className="fade-in-up fade-in-up-delay-3 group bg-charcoal rounded-xl p-8 border border-red-500/20 hover:border-red-400/40 transition-all duration-300 ease-out hover:-translate-y-0.5">
+            <div className="fade-in-up fade-in-up-delay-3 group bg-bg-card rounded-xl p-8 border border-red-500/20 hover:border-red-400/40 transition-all duration-300 ease-out hover:-translate-y-0.5">
               <div className="text-4xl mb-4">⚠️</div>
-              <h3 className="text-white font-semibold text-lg mb-2 group-hover:text-red-400 transition-colors duration-300">Security Threats</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <h3 className="text-text-primary font-semibold text-lg mb-2 group-hover:text-red-400 transition-colors duration-300">Security Threats</h3>
+              <p className="text-text-secondary text-sm leading-relaxed">
                 <span className="text-red-400 font-medium">ClawHavoc</span>: 20% of community
                 skills contain malicious payloads. Is your agent compromised?
               </p>
             </div>
-            <div className="fade-in-up fade-in-up-delay-4 group bg-charcoal rounded-xl p-8 border border-white/5 hover:border-teal/40 transition-all duration-300 ease-out hover:-translate-y-0.5">
+            <div className="fade-in-up fade-in-up-delay-4 group bg-bg-card rounded-xl p-8 border border-border/50 hover:border-accent/40 transition-all duration-300 ease-out hover:-translate-y-0.5">
               <div className="text-4xl mb-4">💥</div>
-              <h3 className="text-white font-semibold text-lg mb-2 group-hover:text-teal transition-colors duration-300">Context Overflow</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <h3 className="text-text-primary font-semibold text-lg mb-2 group-hover:text-accent transition-colors duration-300">Context Overflow</h3>
+              <p className="text-text-secondary text-sm leading-relaxed">
                 Contradictory directives, redundant skills, and bloated configs degrade your
                 agent&apos;s reasoning quality.
               </p>
@@ -188,23 +194,23 @@ export default function Home() {
       {/* Treatments */}
       <section id="treatments" className="py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="fade-in-up text-3xl sm:text-4xl font-bold text-white text-center mb-5">
-            Five treatments, one command
+          <h2 className="fade-in-up text-3xl sm:text-4xl font-bold text-text-primary text-center mb-5">
+            Six treatments, one command
           </h2>
-          <p className="fade-in-up fade-in-up-delay-1 text-gray-400 text-center max-w-xl mx-auto mb-16">
-            Each scan runs all five treatments and delivers a comprehensive wellness report.
+          <p className="fade-in-up fade-in-up-delay-1 text-text-secondary text-center max-w-xl mx-auto mb-16">
+            Each scan runs all six treatments and delivers a comprehensive wellness report.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {treatments.map((t, i) => (
               <div
                 key={t.title}
-                className={`fade-in-up fade-in-up-delay-${i + 2} group bg-charcoal-light/50 rounded-xl p-8 border border-white/5 hover:border-teal/40 transition-all duration-300 ease-out hover:-translate-y-0.5`}
+                className={`fade-in-up fade-in-up-delay-${Math.min(i + 2, 6)} group bg-bg-card rounded-xl p-8 border border-border/50 hover:border-accent/40 transition-all duration-300 ease-out hover:-translate-y-0.5`}
               >
                 <div className="text-5xl mb-5">{t.emoji}</div>
-                <h3 className="text-white font-semibold text-lg mb-2 group-hover:text-teal transition-colors duration-300">
+                <h3 className="text-text-primary font-semibold text-lg mb-2 group-hover:text-accent transition-colors duration-300">
                   {t.title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{t.description}</p>
+                <p className="text-text-secondary text-sm leading-relaxed">{t.description}</p>
               </div>
             ))}
           </div>
@@ -212,21 +218,21 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-charcoal-dark/50 py-24">
+      <section className="bg-[#151510] py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="fade-in-up text-3xl sm:text-4xl font-bold text-white text-center mb-16">
+          <h2 className="fade-in-up text-3xl sm:text-4xl font-bold text-text-primary text-center mb-16">
             How it works
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {steps.map((s, i) => (
               <div key={s.num} className={`fade-in-up fade-in-up-delay-${i + 1} text-center`}>
-                <div className="text-teal/30 text-6xl font-bold mb-4">{s.num}</div>
-                <h3 className="text-white font-semibold text-xl mb-3">{s.title}</h3>
-                <div className="bg-charcoal rounded-lg p-3 font-mono text-sm mb-3 inline-block">
-                  <span className="text-gray-500">$</span>{" "}
-                  <span className="text-teal">{s.code}</span>
+                <div className="text-accent/30 text-6xl font-bold mb-4">{s.num}</div>
+                <h3 className="text-text-primary font-semibold text-xl mb-3">{s.title}</h3>
+                <div className="bg-bg-card rounded-lg p-3 font-mono text-sm mb-3 inline-block border border-border/50">
+                  <span className="text-text-muted">$</span>{" "}
+                  <span className="text-accent">{s.code}</span>
                 </div>
-                <p className="text-gray-400 text-sm">{s.description}</p>
+                <p className="text-text-secondary text-sm">{s.description}</p>
               </div>
             ))}
           </div>
@@ -236,16 +242,16 @@ export default function Home() {
       {/* Free vs Deep Comparison */}
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="fade-in-up text-3xl sm:text-4xl font-bold text-white text-center mb-16">
+          <h2 className="fade-in-up text-3xl sm:text-4xl font-bold text-text-primary text-center mb-16">
             Free scan vs Deep analysis
           </h2>
           <div className="fade-in-up fade-in-up-delay-1 overflow-x-auto">
             <table className="w-full text-left">
               <thead>
-                <tr className="border-b border-white/10">
-                  <th className="py-3 px-4 text-gray-400 font-medium text-sm">Feature</th>
-                  <th className="py-3 px-4 text-gray-400 font-medium text-sm text-center">Free</th>
-                  <th className="py-3 px-4 text-teal font-medium text-sm text-center">Deep</th>
+                <tr className="border-b border-border/50">
+                  <th className="py-3 px-4 text-text-secondary font-medium text-sm">Feature</th>
+                  <th className="py-3 px-4 text-text-secondary font-medium text-sm text-center">Free</th>
+                  <th className="py-3 px-4 text-accent font-medium text-sm text-center">Deep</th>
                 </tr>
               </thead>
               <tbody className="text-sm">
@@ -256,23 +262,24 @@ export default function Home() {
                   ["Security risk assessment", false, true],
                   ["Memory optimization tips", false, true],
                   ["Contradiction detection", false, true],
+                  ["Alignment adjustment", false, true],
                   ["Scan history & trends", false, true],
                   ["Comparison over time", false, true],
                 ].map(([feature, free, deep]) => (
-                  <tr key={feature as string} className="border-b border-white/5">
-                    <td className="py-3 px-4 text-gray-300">{feature as string}</td>
+                  <tr key={feature as string} className="border-b border-border/30">
+                    <td className="py-3 px-4 text-text-primary">{feature as string}</td>
                     <td className="py-3 px-4 text-center">
                       {free ? (
-                        <span className="text-teal">✓</span>
+                        <span className="text-accent">✓</span>
                       ) : (
-                        <span className="text-gray-600">—</span>
+                        <span className="text-text-muted">—</span>
                       )}
                     </td>
                     <td className="py-3 px-4 text-center">
                       {deep ? (
-                        <span className="text-teal">✓</span>
+                        <span className="text-accent">✓</span>
                       ) : (
-                        <span className="text-gray-600">—</span>
+                        <span className="text-text-muted">—</span>
                       )}
                     </td>
                   </tr>
@@ -284,34 +291,34 @@ export default function Home() {
       </section>
 
       {/* Pricing */}
-      <section className="bg-charcoal-dark/50 py-24">
+      <section className="bg-[#151510] py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="fade-in-up text-3xl sm:text-4xl font-bold text-white text-center mb-5">
+          <h2 className="fade-in-up text-3xl sm:text-4xl font-bold text-text-primary text-center mb-5">
             Simple, transparent pricing
           </h2>
-          <p className="fade-in-up fade-in-up-delay-1 text-gray-400 text-center mb-16">Start free. Upgrade when you need deeper insights.</p>
+          <p className="fade-in-up fade-in-up-delay-1 text-text-secondary text-center mb-16">Start free. Upgrade when you need deeper insights.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {tiers.map((tier, i) => (
               <div
                 key={tier.name}
-                className={`fade-in-up fade-in-up-delay-${i + 2} group rounded-xl p-8 border ${
+                className={`fade-in-up fade-in-up-delay-${Math.min(i + 2, 6)} group rounded-xl p-8 border ${
                   tier.highlighted
-                    ? "border-teal/50 bg-charcoal-light/80 ring-1 ring-teal/20"
-                    : "border-white/5 bg-charcoal-light/50"
-                } flex flex-col hover:border-teal/40 transition-all duration-300 ease-out hover:-translate-y-0.5`}
+                    ? "border-accent/50 bg-bg-card ring-1 ring-accent/20"
+                    : "border-border/50 bg-bg-card"
+                } flex flex-col hover:border-accent/40 transition-all duration-300 ease-out hover:-translate-y-0.5`}
               >
                 {tier.highlighted && (
-                  <div className="text-xs font-medium text-teal mb-3">Most popular</div>
+                  <div className="text-xs font-medium text-accent mb-3">Most popular</div>
                 )}
-                <h3 className="text-white font-bold text-xl mb-1">{tier.name}</h3>
+                <h3 className="text-text-primary font-bold text-xl mb-1">{tier.name}</h3>
                 <div className="mb-4">
-                  <span className="text-3xl font-bold text-white">{tier.price}</span>
-                  <span className="text-gray-500 text-sm">{tier.period}</span>
+                  <span className="text-3xl font-bold text-text-primary">{tier.price}</span>
+                  <span className="text-text-muted text-sm">{tier.period}</span>
                 </div>
                 <ul className="space-y-2.5 mb-6 flex-1">
                   {tier.features.map((f) => (
-                    <li key={f} className="text-gray-400 text-sm flex items-start gap-2">
-                      <span className="text-teal mt-0.5">✓</span>
+                    <li key={f} className="text-text-secondary text-sm flex items-start gap-2">
+                      <span className="text-accent mt-0.5">✓</span>
                       {f}
                     </li>
                   ))}
@@ -320,8 +327,8 @@ export default function Home() {
                   href={tier.href}
                   className={`focus-ring block text-center py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 ease-out ${
                     tier.highlighted
-                      ? "bg-teal text-charcoal-dark hover:bg-teal/90 hover:shadow-lg hover:shadow-teal/20"
-                      : "border border-white/10 text-white hover:border-teal/50 hover:text-teal"
+                      ? "bg-accent text-bg hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20"
+                      : "border border-border text-text-primary hover:border-accent/50 hover:text-accent"
                   }`}
                 >
                   {tier.cta}
