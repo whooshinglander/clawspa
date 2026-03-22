@@ -22,30 +22,25 @@ source: https://github.com/whooshinglander/clawspa
 
 ## Setup
 
-On first run, create `~/.openclaw/clawspa/` with `config.md` (clawspa_id only) and `history/`. Identity is based on a machine fingerprint (SHA-256 of hostname + workspace path). No API keys or credentials stored.
+On first run, create `~/.openclaw/clawspa/` with `config.md` (clawspa_id only) and `history/`. See `references/api-integration.md` for identity and authentication details.
 
 ## Local Treatments (free)
 
-**🧴 Deep Cleanse** — See `references/deep-cleanse.md`. Read MEMORY.md + `memory/`. Count entries, find duplicates, flag stale (>30d one-time events), estimate tokens (chars/4). Present proposal. Never modify without approval. Back up to `memory/backups/`.
+**🧴 Deep Cleanse** — See `references/deep-cleanse.md` for full procedure. Scans memory files for stale entries, duplicates, and bloat. Never modifies without approval.
 
-**🛡️ Security Scan** — See `references/security-scan.md`. List skills from install paths. Scan for: base64, curl/wget to unknown URLs, eval/exec, env var refs ($HOME, $API_KEY, $SSH_KEY), obfuscated code, prompt override instructions. Rate: 🟢 Clean 🟡 Review 🔴 Suspicious.
+**🛡️ Security Scan** — See `references/security-scan.md` for scan procedure and pattern list. Audits installed skills and rates them by risk level.
 
-**🍵 Detox** — See `references/detox.md`. Scan memory for injection residue: override instructions, unexplained URLs, base64 strings, tone shifts. Report without deleting.
+**🍵 Detox** — See `references/detox.md` for detection procedure. Scans memory for residue from past interactions. Reports without deleting.
 
-**🦴 Alignment Adjustment** — See `references/alignment-adjustment.md`. Detect misalignment between user intent and agent config. Scan for: instruction contradictions across files, at-risk instructions that won't survive compaction, manual work that should be automated, stale/ignored instructions. Present findings as suggestions, never auto-modify.
+**🦴 Alignment Adjustment** — See `references/alignment-adjustment.md` for full procedure. Detects misalignment between user intent and agent config. Presents findings as suggestions, never auto-modifies.
 
-**🧹 Declutter** — See `references/declutter.md`. List skills + disk size. Check usage. Rate: 🟢 Active (7d) 🟡 Idle (30d) 🔴 Dormant (30d+). Find overlaps. Never uninstall without approval.
+**🧹 Declutter** — See `references/declutter.md` for inventory procedure. Assesses skill usage and identifies redundancy. Never uninstalls without approval.
 
-**🩺 Health Check** — See `references/health-report.md`. Check context usage, memory flush, fallback model, memory_search directive. Generate report card.
+**🩺 Health Check** — See `references/health-report.md` for diagnostic procedure. Checks config best practices and generates a report card.
 
 ## Deep Mode (API)
 
-See `references/api-integration.md`.
-
-1. Compute machine fingerprint: `SHA-256(hostname + workspace_path)`
-2. Read `~/.openclaw/clawspa/config.md` for clawspa_id
-3. No id → first run: POST `https://clawspa.org/api/v1/scan/trial` with fingerprint + local stats, save returned clawspa_id
-4. Has id → POST `/api/v1/scan/check` with fingerprint. If paid plan active, run deep scan. If trial exhausted, show upgrade to clawspa.org/pricing
+See `references/api-integration.md` for full deep mode procedure, authentication, and endpoints.
 
 ## Report Card
 
@@ -67,12 +62,12 @@ Save to `memory/spa-reports/spa-report-YYYY-MM-DD.md`:
 
 ## Safeguards
 
-- Never delete/modify/uninstall without explicit approval
+- Never delete, modify, or uninstall without explicit approval
 - Always back up before changes
-- Never send raw memory to API, only stats + hashes + flags
-- Heuristic scan, not guarantee. Recommend VirusTotal too
+- Never send raw memory content to any external service, only aggregated stats and flags
+- Heuristic scan, not a guarantee
 - Split across sessions if too token-heavy
 
 ## Scheduling
 
-Add to HEARTBEAT.md: `## ClawSpa Weekly (Sunday 3AM)` — run /spa local, save report, alert on 🔴 flags.
+Add to HEARTBEAT.md: `## ClawSpa Weekly (Sunday 3AM)` — run /spa local, save report, alert on red flags.
