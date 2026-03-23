@@ -21,14 +21,14 @@ export const metadata: Metadata = {
     siteName: "ClawSpa",
     type: "website",
     locale: "en_US",
-    images: [{ url: "https://clawspa.org/og-image-v2.png", width: 1200, height: 630, alt: "ClawSpa — Agent Wellness for OpenClaw" }],
+    images: [{ url: "https://clawspa.org/og-image.png", width: 1200, height: 630, alt: "ClawSpa — Agent Wellness for OpenClaw" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "ClawSpa — Agent Maintenance & Wellness",
     description:
       "A spa day for your OpenClaw agent. Memory cleanse, security scans, and more.",
-    images: ["https://clawspa.org/og-image-v2.png"],
+    images: ["https://clawspa.org/og-image.png"],
   },
 };
 
