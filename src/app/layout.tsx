@@ -11,6 +11,14 @@ const robotoSlab = Roboto_Slab({ subsets: ["latin"], weight: ["700", "800"], var
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: ["400"], variable: "--font-script" });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png" }],
+  },
   title: "ClawSpa — Agent Wellness Suite",
   description:
     "A spa day for your OpenClaw agent. Deep cleanse memory, scan for security risks, detox configs, and keep your agent running at peak performance.",
