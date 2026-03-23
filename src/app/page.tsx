@@ -124,8 +124,8 @@ export default function Home() {
       <section className="relative overflow-hidden min-h-[85vh] flex items-center">
         {/* Full-bleed background photo */}
         <div
-          className="absolute inset-0 bg-cover bg-no-repeat bg-right sm:bg-center"
-          style={{ backgroundImage: "url('/hero-spa.jpg')" }}
+          className="absolute inset-0 bg-cover bg-no-repeat sm:bg-center"
+          style={{ backgroundImage: "url('/hero-spa.jpg')", backgroundPosition: "70% center" }}
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/55" />
