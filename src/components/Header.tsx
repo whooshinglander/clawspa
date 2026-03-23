@@ -11,8 +11,8 @@ export default function Header() {
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         <Link href="/" className="focus-ring flex items-center gap-2 text-xl font-display font-semibold rounded-lg tracking-wide">
           <span className="text-2xl">💆</span>
-          <span className="text-text-primary">
-            Claw<span className="text-accent">Spa</span>
+          <span>
+            <span className="text-text-primary font-bold" style={{ fontFamily: "var(--font-slab)" }}>Claw</span><span className="text-accent font-normal text-3xl" style={{ fontFamily: "var(--font-script)" }}>Spa</span>
           </span>
         </Link>
 
