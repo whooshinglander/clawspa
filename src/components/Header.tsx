@@ -12,7 +12,7 @@ export default function Header() {
         <Link href="/" className="focus-ring flex items-center gap-2 text-xl font-display font-semibold rounded-lg tracking-wide">
           <span className="text-2xl">💆</span>
           <span>
-            <span className="text-text-primary font-bold" style={{ fontFamily: "var(--font-slab)" }}>Claw</span><span className="text-accent font-normal text-3xl" style={{ fontFamily: "var(--font-script)" }}>Spa</span>
+            <span className="text-text-primary font-bold" style={{ fontFamily: "var(--font-slab)" }}>Claw</span><span className="text-accent font-normal" style={{ fontFamily: "var(--font-script)", fontSize: "1.7rem" }}>Spa</span>
           </span>
         </Link>
 
