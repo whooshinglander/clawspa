@@ -121,33 +121,35 @@ export default function Home() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent pointer-events-none" />
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 pb-24 text-center relative">
+      <section className="relative overflow-hidden min-h-[85vh] flex items-center">
+        {/* Full-bleed background photo */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/hero-spa.jpg')" }}
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/55" />
+        {/* Bottom gradient blend into page */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bg to-transparent" />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 pb-24 text-center relative w-full">
           <div className="fade-in-up inline-block px-4 py-1.5 mb-8 text-xs font-medium text-accent bg-accent/10 rounded-full border border-accent/20">
             Agent wellness for the OpenClaw ecosystem
           </div>
-          <h1 className="fade-in-up fade-in-up-delay-1 text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-text-primary leading-[1.1] mb-8 text-balance">
+          <h1 className="fade-in-up fade-in-up-delay-1 text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-white leading-[1.1] mb-8 text-balance">
             A spa day for your
             <br />
             <span className="text-accent">OpenClaw agent</span>
           </h1>
-          <p className="fade-in-up fade-in-up-delay-2 text-text-secondary text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="fade-in-up fade-in-up-delay-2 text-white/75 text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
             Deep cleanse memory, scan for security threats, detox configs, and keep your agent
             running at peak performance.
           </p>
-          <div className="fade-in-up fade-in-up-delay-3 flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="fade-in-up fade-in-up-delay-3 flex justify-center">
             <Link
               href="/docs#installation"
               className="focus-ring px-8 py-3.5 bg-accent text-bg font-semibold rounded-lg hover:bg-accent-hover transition-all duration-300 ease-out text-lg hover:shadow-lg hover:shadow-accent/20"
             >
               Install Free
-            </Link>
-            <Link
-              href="/pricing"
-              className="focus-ring px-8 py-3.5 border border-border text-text-primary font-semibold rounded-lg hover:border-accent/50 hover:text-accent transition-all duration-300 ease-out text-lg"
-            >
-              View Pricing
             </Link>
           </div>
         </div>
