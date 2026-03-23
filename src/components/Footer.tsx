@@ -10,7 +10,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-2 text-lg font-display font-semibold mb-4 tracking-wide">
               <span>💆</span>
               <span>
-                <span className="text-text-primary font-bold" style={{ fontFamily: "var(--font-slab)" }}>Claw</span><span className="text-accent font-normal text-2xl" style={{ fontFamily: "var(--font-script)" }}>Spa</span>
+                <span className="text-text-primary font-bold" style={{ fontFamily: "var(--font-sans)" }}>Claw</span><span className="text-accent font-normal text-2xl" style={{ fontFamily: "var(--font-script)" }}>Spa</span>
               </span>
             </Link>
             <p className="text-text-muted text-sm mb-6 max-w-xs leading-relaxed">
