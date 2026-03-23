@@ -125,7 +125,7 @@ export default function Home() {
         {/* Full-bleed background photo */}
         <div
           className="absolute inset-0 bg-cover bg-no-repeat sm:bg-center"
-          style={{ backgroundImage: "url('/hero-spa.jpg')", backgroundPosition: "75% center" }}
+          style={{ backgroundImage: "url('/hero-spa.jpg')", backgroundPosition: "80% center" }}
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/55" />
