@@ -44,6 +44,12 @@ const treatments = [
     description:
       "Full diagnostic report: memory usage, skill coherence, security posture, and performance score.",
   },
+  {
+    emoji: "🥗",
+    title: "Token Diet",
+    description:
+      "Optional add-on treatment. Audits token spend, spots sinkholes, and trims context calories with Where Am I Burning Tokens?.",
+  },
 ];
 
 const steps = [

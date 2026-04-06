@@ -102,8 +102,9 @@ clawspa = "latest"`}</CodeBlock>
                 <div className="bg-bg-card rounded-xl p-5 border border-border/50">
                   <h3 className="text-text-primary font-mono font-semibold mb-2">/spa</h3>
                   <p className="text-text-secondary text-sm">
-                    Run a full wellness scan. Performs all five treatments (deep cleanse, security
-                    scan, detox, declutter, health check) and returns a health score.
+                    Run a full wellness scan. Performs all five core treatments (deep cleanse,
+                    security scan, detox, declutter, health check) and returns a health score.
+                    Optional add-on: Token Diet for token spend audits.
                   </p>
                 </div>
                 <div className="bg-bg-card rounded-xl p-5 border border-border/50">
